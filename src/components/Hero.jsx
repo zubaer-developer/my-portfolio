@@ -1,6 +1,6 @@
 import { FaGithub, FaLinkedin, FaDownload } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
-import profile from "../assets/profile.jpg";
+import profilePhoto from "../assets/profile.jpg";
 
 const Hero = () => {
   const personalInfo = {
@@ -30,7 +30,7 @@ const Hero = () => {
             </p>
 
             {/* Name */}
-            <h1 className="text-4xl font-bold text-primary mb-3">
+            <h1 className="text-4xl lg:text-5xl font-bold text-primary mb-3">
               {personalInfo.name}
             </h1>
 
@@ -105,7 +105,7 @@ const Hero = () => {
             <div className="avatar">
               <div className="w-64 md:w-80 rounded-full ring ring-primary ring-offset-base-100 ring-offset-4">
                 <img
-                  src={profile}
+                  src={profilePhoto}
                   alt="MD. ZUBAER HOSSAIN"
                   className="object-cover"
                 />
