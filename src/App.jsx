@@ -1,5 +1,6 @@
 import "./App.css";
 import About from "./components/About";
+import Education from "./components/Educaion";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Skills from "./components/Skills";
@@ -11,6 +12,7 @@ function App() {
       <Hero></Hero>
       <About></About>
       <Skills></Skills>
+      <Education></Education>
       <h1 className="text-3xl font-bold text-center py-10">My Portfolio</h1>
     </div>
   );
