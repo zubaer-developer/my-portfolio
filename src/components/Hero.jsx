@@ -19,7 +19,7 @@ const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center bg-base-200">
       {/* Container */}
-      <div className="max-w-7xl mx-auto px-4 py-10 w-full">
+      <div className="max-w-7xl mx-auto px-4 py-10">
         {/* Grid Layout */}
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           {/* Left Side - Text Content */}

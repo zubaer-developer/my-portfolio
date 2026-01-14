@@ -1,6 +1,7 @@
 import About from "../components/About";
 import Contact from "../components/Contact";
 import Education from "../components/Educaion";
+import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import Projects from "../components/Projects";
@@ -16,7 +17,7 @@ function Home() {
       <Education></Education>
       <Projects></Projects>
       <Contact></Contact>
-      <h1 className="text-3xl font-bold text-center py-10">My Portfolio</h1>
+      <Footer></Footer>
     </div>
   );
 }
