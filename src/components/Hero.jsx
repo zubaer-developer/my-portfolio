@@ -13,9 +13,11 @@ const Hero = () => {
     social: {
       github: "https://github.com/zubaer-developer",
       linkedin: "https://www.linkedin.com/in/md-zubaer-hossain-137134356/",
+      facebook: "https://facebook.com",
       email: "zubaer.developer@gmail.com",
     },
   };
+
   return (
     <section id="home" className="min-h-screen flex items-center bg-base-200">
       {/* Container */}
@@ -50,7 +52,7 @@ const Hero = () => {
               <a
                 href={personalInfo.resumeLink}
                 target="_blank"
-                rel="noopener noreferrer"
+                download="Zubaer_Hossain_Resume.pdf"
                 className="btn btn-primary gap-2"
               >
                 <FaDownload />
@@ -86,6 +88,17 @@ const Hero = () => {
                 title="LinkedIn"
               >
                 <FaLinkedin />
+              </a>
+
+              {/* Facebook */}
+              <a
+                href={personalInfo.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-circle btn-ghost text-2xl hover:text-primary hover:bg-primary/10 transition-all"
+                title="Facebook"
+              >
+                <FaFacebook />
               </a>
 
               {/* Email */}
