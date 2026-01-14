@@ -1,20 +1,49 @@
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { useState } from "react";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 
 const Navbar = () => {
   // Mobile open/close state
-  // isMobileMenuOpen = true, menu show, false menu hide
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Current location
+  const location = useLocation();
+
+  // Navigate
+  const navigate = useNavigate();
+
+  // Home page check
+  const isHomePage = location.pathname === "/";
 
   // Navigation links array
   const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Education", href: "#education" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "home" },
+    { name: "About", href: "about" },
+    { name: "Skills", href: "skills" },
+    { name: "Education", href: "education" },
+    { name: "Projects", href: "projects" },
+    { name: "Contact", href: "contact" },
   ];
+
+  // Handle navigation click
+  const handleNavClick = (href) => {
+    setIsMobileMenuOpen(false);
+
+    if (isHomePage) {
+      const element = document.getElementById(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate("/");
+      setTimeout(() => {
+        const element = document.getElementById(href);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    }
+  };
 
   return (
     // navbar: DaisyUI navbar class
@@ -24,39 +53,38 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto w-full px-4 flex">
         {/* Navbar Start - Logo/Brand */}
         <div className="flex-1">
-          <a href="#home" className="text-2xl font-bold text-primary">
+          <Link
+            href="#home"
+            className="text-2xl font-bold text-primary"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
             ZUBAER
-          </a>
+          </Link>
         </div>
 
         {/* Navbar Center - Desktop Links */}
-        {/* hidden lg:flex: mobile hide, large screen show */}
         <div className="hidden lg:flex">
           <ul className="menu menu-horizontal gap-2">
             {navLinks.map((link) => (
               <li key={link.name}>
                 {/* transition-colors: smooth color change */}
-                <a
-                  href={link.href}
+                <button
+                  onClick={() => handleNavClick(link.href)}
                   className="hover:text-primary transition-colors font-medium"
                 >
                   {link.name}
-                </a>
+                </button>
               </li>
             ))}
           </ul>
         </div>
 
         {/* Navbar End - Mobile Menu Button */}
-        {/* lg:hidden: large screen hide */}
         <div className="lg:hidden">
           <button
-            // onClick: on button click menu toggle
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            // btn-ghost: transparent background
             className="btn btn-ghost btn-circle"
           >
-            {/* isMobileMenuOpen true X icon, false Menu icon */}
             {isMobileMenuOpen ? (
               <HiX className="text-2xl" />
             ) : (
@@ -67,24 +95,17 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu - Dropdown */}
-      {/* isMobileMenuOpen true show */}
       {isMobileMenuOpen && (
-        // absolute: position absolute
-        // top-full: under navbar
-        // left-0 right-0: full width
-        // for animate simple fade effect
         <div className="lg:hidden absolute top-full left-0 right-0 bg-base-100 shadow-lg">
           <ul className="menu p-4">
             {navLinks.map((link) => (
               <li key={link.name}>
-                <a
-                  href={link.href}
+                <button
                   className="hover:text-primary transition-colors py-3 text-lg"
-                  // link click, menu will be close
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => handleNavClick(link.href)}
                 >
                   {link.name}
-                </a>
+                </button>
               </li>
             ))}
           </ul>

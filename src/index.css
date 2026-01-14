@@ -1,2 +1,37 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+/* ========== Custom Styles ========== */
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Selection Color  */
+::selection {
+  background-color: #570df8;
+  color: white;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #570df8;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4506cb;
+}
