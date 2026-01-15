@@ -10,7 +10,9 @@ const SkillCategory = ({ category }) => {
         </h3>
 
         {/* Category Description */}
-        <p className="text-gray-500 text-sm mb-6">{category.description}</p>
+        <p className="text-base-content/60 text-base mb-6">
+          {category.description}
+        </p>
 
         {/* Skills List */}
         <div>

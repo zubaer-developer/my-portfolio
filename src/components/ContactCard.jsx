@@ -6,10 +6,10 @@ const ContactCard = ({ icon, title, value, link, linkText }) => {
         <div className="text-4xl text-primary mb-3">{icon}</div>
 
         {/* Title */}
-        <h3 className="card-title text-lg text-gray-800">{title}</h3>
+        <h3 className="card-title text-lg text-base-content">{title}</h3>
 
         {/* Value */}
-        <p className="text-gray-600">{value}</p>
+        <p className="text-base-content/60">{value}</p>
 
         {/* Link Button */}
         {link && (

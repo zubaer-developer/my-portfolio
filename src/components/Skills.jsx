@@ -123,11 +123,11 @@ const Skills = () => {
       <div className="max-w-7xl mx-auto px-4">
         {/* Section Title */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-base-content mb-4">
             My <span className="text-primary">Skills</span>
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto mb-4"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base-content/80 max-w-2xl mx-auto text-lg">
             Here are the technologies and tools I work with to bring ideas to
             life
           </p>
@@ -142,7 +142,7 @@ const Skills = () => {
 
         {/* Additional Skills Tags */}
         <div className="mt-12 text-center">
-          <h3 className="text-xl font-semibold text-gray-800 mb-6">
+          <h3 className="text-xl font-semibold text-base-content mb-6">
             Other Technologies I'm Familiar With
           </h3>
 
