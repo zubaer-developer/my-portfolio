@@ -47,168 +47,208 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-20 bg-base-100">
+    <section
+      id="about"
+      className="py-24 bg-base-100 transition-colors duration-300"
+    >
       {/* Container */}
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-6">
         {/* Section Title */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            About <span className="text-primary">Me</span>
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-black text-base-content mb-4 tracking-tight">
+            About <span className="text-primary italic">Me</span>
           </h2>
           {/* Underline decoration */}
-          <div className="w-24 h-1 bg-primary mx-auto mb-4"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Get to know me better - my journey, passion, and what drives me
+          <div className="flex justify-center items-center gap-2 mb-6">
+            <div className="w-12 h-1.5 bg-primary rounded-full"></div>
+            <div className="w-4 h-1.5 bg-secondary rounded-full"></div>
+          </div>
+          <p className="text-base-content/70 max-w-2xl mx-auto text-lg">
+            Get to know me better — my journey, passion, and what drives me
             forward
           </p>
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
           {/* Left Side - Image */}
-          <div className="flex justify-center">
+          <div className="flex justify-center lg:justify-start">
             {/* Decorative container for image */}
             {/* relative: for positioning child elements */}
-            <div className="relative">
+            <div className="relative group">
               {/* Background decoration */}
               {/* absolute: positioned relative to parent */}
-              <div className="absolute -top-4 -left-4 w-72 h-72 md:w-96 md:h-96 bg-primary/20 rounded-lg -z-10"></div>
+              <div className="absolute -top-6 -left-6 w-full h-full border-4 border-primary/30 rounded-2xl -z-10 group-hover:top-2 group-hover:left-2 transition-all duration-500"></div>
+              <div className="absolute -bottom-6 -right-6 w-full h-full bg-secondary/10 rounded-2xl -z-20 group-hover:bottom-2 group-hover:right-2 transition-all duration-500"></div>
+
               {/* Main image */}
-              <img
-                src={profilePhoto}
-                alt="MD. ZUBAER HOSSAIN"
-                className="w-72 h-72 md:w-96 md:h-96 object-cover rounded-lg shadow-xl"
-              />
+              <div className="overflow-hidden rounded-2xl shadow-2xl ring-4 ring-base-100">
+                <img
+                  src={profilePhoto}
+                  alt="MD. ZUBAER HOSSAIN"
+                  className="w-80 h-80 md:w-[450px] md:h-[450px] object-cover hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+
               {/* Experience badge */}
-              <div className="absolute -bottom-4 -right-4 bg-primary text-white px-6 py-3 rounded-lg shadow-lg">
-                <p className="text-2xl font-bold">2+</p>
-                <p className="text-sm">Years Coding</p>
+              <div className="absolute -bottom-8 right-8 md:-right-8 bg-primary text-primary-content p-5 rounded-2xl shadow-2xl flex flex-col items-center min-w-[120px] animate-bounce-slow">
+                <span className="text-3xl font-black">2+</span>
+                <span className="text-xs uppercase font-bold tracking-widest">
+                  Years Exp.
+                </span>
               </div>
             </div>
           </div>
 
           {/* Right Side - Text Content */}
-          <div>
+          <div className="flex flex-col gap-6">
             {/* Subtitle */}
-            <h3 className="text-2xl font-semibold text-gray-800 mb-4">
-              Full Stack Developer based in Bangladesh
+            <h3 className="text-3xl font-bold text-base-content leading-tight">
+              Crafting Digital Solutions <br />
+              <span className="text-primary">Based in Bangladesh</span>
             </h3>
 
             {/* Description paragraphs */}
-            <div className="space-y-4 text-gray-600 leading-relaxed">
+            <div className="space-y-4 text-base-content/80 text-lg leading-relaxed">
               {aboutInfo.description.map((para, index) => (
                 <p key={index}>{para}</p>
               ))}
             </div>
 
             {/* Quick info */}
-            <div className="mt-6 grid grid-cols-2 gap-4">
-              <div>
-                <span className="font-semibold text-gray-800">Name:</span>
-                <span className="text-gray-600 ml-2">MD. ZUBAER HOSSAIN</span>
+            <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 bg-base-200/50 p-6 rounded-2xl border border-base-content/5">
+              <div className="flex flex-col">
+                <span className="text-xs uppercase font-bold text-primary tracking-tighter">
+                  Name
+                </span>
+                <span className="text-base-content font-medium">
+                  MD. ZUBAER HOSSAIN
+                </span>
               </div>
-              <div>
-                <span className="font-semibold text-gray-800">Email:</span>
-                <span className="text-gray-600 ml-2 text-sm">
+              <div className="flex flex-col">
+                <span className="text-xs uppercase font-bold text-primary tracking-tighter">
+                  Email
+                </span>
+                <span className="text-base-content font-medium break-all">
                   zubaer.developer@gmail.com
                 </span>
               </div>
-              <div>
-                <span className="font-semibold text-gray-800">From:</span>
-                <span className="text-gray-600 ml-2">Bangladesh</span>
+              <div className="flex flex-col">
+                <span className="text-xs uppercase font-bold text-primary tracking-tighter">
+                  From
+                </span>
+                <span className="text-base-content font-medium">
+                  Chapai Nawabganj, BD
+                </span>
               </div>
-              <div>
-                <span className="font-semibold text-gray-800">Status:</span>
-                <span className="text-green-600 ml-2">Available for work</span>
+              <div className="flex flex-col">
+                <span className="text-xs uppercase font-bold text-primary tracking-tighter">
+                  Status
+                </span>
+                <span className="flex items-center gap-2 text-success font-bold">
+                  <span className="relative flex h-3 w-3">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-success"></span>
+                  </span>
+                  Available for work
+                </span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Info Cards Section */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-8 mb-24">
           {/* Journey Card */}
-          <div className="card bg-base-200 hover:shadow-xl transition-shadow duration-300">
-            <div className="card-body">
-              {/* Icon */}
-              <div className="text-4xl text-primary mb-4">
-                {aboutInfo.journey.icon}
-              </div>
-              {/* Title */}
-              <h3 className="card-title text-gray-800">
-                {aboutInfo.journey.title}
-              </h3>
-              {/* Description */}
-              <p className="text-gray-600">{aboutInfo.journey.description}</p>
+          <div className="group bg-base-200 p-8 rounded-3xl hover:bg-primary transition-all duration-500 hover:-translate-y-2 border border-base-content/5">
+            <div className="text-5xl text-primary group-hover:text-primary-content mb-6 transition-colors">
+              {aboutInfo.journey.icon}
             </div>
+            <h3 className="text-2xl font-bold text-base-content group-hover:text-primary-content mb-4 transition-colors">
+              {aboutInfo.journey.title}
+            </h3>
+            <p className="text-base-content/70 group-hover:text-primary-content/90 transition-colors leading-relaxed">
+              {aboutInfo.journey.description}
+            </p>
           </div>
 
           {/* Work Card */}
-          <div className="card bg-base-200 hover:shadow-xl transition-shadow duration-300">
-            <div className="card-body">
-              <div className="text-4xl text-primary mb-4">
-                {aboutInfo.work.icon}
-              </div>
-              <h3 className="card-title text-gray-800">
-                {aboutInfo.work.title}
-              </h3>
-              <p className="text-gray-600">{aboutInfo.work.description}</p>
+          <div className="group bg-base-200 p-8 rounded-3xl hover:bg-secondary transition-all duration-500 hover:-translate-y-2 border border-base-content/5">
+            <div className="text-5xl text-primary group-hover:text-secondary-content mb-6 transition-colors">
+              {aboutInfo.work.icon}
             </div>
+            <h3 className="text-2xl font-bold text-base-content group-hover:text-secondary-content mb-4 transition-colors">
+              {aboutInfo.work.title}
+            </h3>
+            <p className="text-base-content/70 group-hover:text-secondary-content/90 transition-colors leading-relaxed">
+              {aboutInfo.work.description}
+            </p>
           </div>
 
           {/* Hobbies Card */}
-          <div className="card bg-base-200 hover:shadow-xl transition-shadow duration-300">
-            <div className="card-body">
-              <div className="text-4xl text-primary mb-4">
-                <FaGamepad />
-              </div>
-              <h3 className="card-title text-gray-800">My Hobbies</h3>
-              {/* Hobbies badges */}
-              <div className="flex flex-wrap gap-2 mt-2">
-                {aboutInfo.hobbies.map((hobby, index) => (
-                  <span
-                    key={index}
-                    className="badge badge-primary badge-outline gap-1 py-3"
-                  >
-                    {hobby.icon}
-                    {hobby.name}
-                  </span>
-                ))}
-              </div>
+          <div className="bg-base-200 p-8 rounded-3xl border border-base-content/5 shadow-inner">
+            <div className="text-5xl text-primary mb-6">
+              <FaGamepad />
+            </div>
+            <h3 className="text-2xl font-bold text-base-content mb-6">
+              My Hobbies
+            </h3>
+            <div className="flex flex-wrap gap-3">
+              {aboutInfo.hobbies.map((hobby, index) => (
+                <span
+                  key={index}
+                  className="flex items-center gap-2 px-4 py-2 bg-base-300 text-base-content rounded-xl font-medium text-sm hover:bg-primary hover:text-primary-content transition-all cursor-default"
+                >
+                  {hobby.icon}
+                  {hobby.name}
+                </span>
+              ))}
             </div>
           </div>
         </div>
 
         {/* Fun Facts / Stats */}
-        <div className="stats stats-vertical lg:stats-horizontal shadow w-full bg-base-200">
+        <div className="stats stats-vertical lg:stats-horizontal shadow-2xl w-full bg-neutral text-neutral-content rounded-3xl overflow-hidden border border-neutral-focus">
           {/* Stat 1 */}
-          <div className="stat">
-            <div className="stat-figure text-primary">
-              <FaCode className="text-3xl" />
+          <div className="stat place-items-center py-10">
+            <div className="stat-figure text-secondary">
+              <FaCode className="text-4xl" />
             </div>
-            <div className="stat-title">Projects Completed</div>
-            <div className="stat-value text-primary">10+</div>
-            <div className="stat-desc">And counting...</div>
+            <div className="stat-title text-neutral-content/70 uppercase tracking-widest text-xs font-bold">
+              Projects Done
+            </div>
+            <div className="stat-value text-secondary text-5xl">10+</div>
+            <div className="stat-desc text-neutral-content/50">
+              And counting...
+            </div>
           </div>
 
           {/* Stat 2 */}
-          <div className="stat">
+          <div className="stat place-items-center py-10 border-base-content/10">
             <div className="stat-figure text-primary">
-              <FaCoffee className="text-3xl" />
+              <FaCoffee className="text-4xl" />
             </div>
-            <div className="stat-title">Cups of Coffee</div>
-            <div className="stat-value text-primary">100+</div>
-            <div className="stat-desc">Fuel for coding</div>
+            <div className="stat-title text-neutral-content/70 uppercase tracking-widest text-xs font-bold">
+              Coffee Consumed
+            </div>
+            <div className="stat-value text-primary text-5xl">100+</div>
+            <div className="stat-desc text-neutral-content/50">
+              Fueled by caffeine
+            </div>
           </div>
 
           {/* Stat 3 */}
-          <div className="stat">
-            <div className="stat-figure text-primary">
-              <FaLaptopCode className="text-3xl" />
+          <div className="stat place-items-center py-10 border-base-content/10">
+            <div className="stat-figure text-accent">
+              <FaLaptopCode className="text-4xl" />
             </div>
-            <div className="stat-title">Hours of Coding</div>
-            <div className="stat-value text-primary">200+</div>
-            <div className="stat-desc">Learning never stops</div>
+            <div className="stat-title text-neutral-content/70 uppercase tracking-widest text-xs font-bold">
+              Coding Hours
+            </div>
+            <div className="stat-value text-accent text-5xl">500+</div>
+            <div className="stat-desc text-neutral-content/50">
+              Continuous learning
+            </div>
           </div>
         </div>
       </div>

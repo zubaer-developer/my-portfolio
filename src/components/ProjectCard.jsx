@@ -20,7 +20,7 @@ const ProjectCard = ({ project }) => {
 
         {/* Short Description */}
         {/* line-clamp-2: show only two lines */}
-        <p className="text-gray-600 text-sm line-clamp-2">
+        <p className="text-base-content/50 text-base line-clamp-2">
           {project.shortDescription}
         </p>
 

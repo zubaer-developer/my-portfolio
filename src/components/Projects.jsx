@@ -7,13 +7,13 @@ const Projects = () => {
       <div className="max-w-7xl mx-auto px-4">
         {/* Section Title */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            My <span className="text-primary">Projects</span>
+          <h2 className="text-5xl md:text-7xl font-black text-base-content tracking-tighter">
+            Creative{" "}
+            <span className="italic font-light text-primary">Showcase</span>
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto mb-4"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Here are some of my recent projects that showcase my skills and
-            passion for development
+          <p className="text-base-content/50 max-w-xl mx-auto text-lg md:text-xl font-medium leading-relaxed">
+            Where logic meets design. A collection of digital products built
+            with precision and performance in mind.
           </p>
         </div>
 
