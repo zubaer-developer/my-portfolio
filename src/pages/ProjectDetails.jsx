@@ -10,6 +10,7 @@ import {
 import ProjectsData from "../data/ProjectsData";
 import { HashLink } from "react-router-hash-link";
 import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 const ProjectDetails = () => {
   // URL from project id
@@ -20,21 +21,26 @@ const ProjectDetails = () => {
 
   if (!project) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">
-            Project Not Found
-          </h2>
-          <Link to="/" className="btn btn-primary">
-            Go Back Home
-          </Link>
+      <>
+        <Navbar />
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">
+              Project Not Found
+            </h2>
+            <Link to="/" className="btn btn-primary">
+              Go Back Home
+            </Link>
+          </div>
         </div>
-      </div>
+        <Footer />
+      </>
     );
   }
 
   return (
     <>
+      <Navbar />
       <div className="min-h-screen bg-base-200 py-10">
         <div className="max-w-5xl mx-auto px-4">
           {/* Back Button */}

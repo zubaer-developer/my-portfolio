@@ -1,6 +1,7 @@
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { useState } from "react";
 import { useLocation, useNavigate, Link } from "react-router-dom";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   // Mobile open/close state
@@ -79,18 +80,23 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* Navbar End - Mobile Menu Button */}
-        <div className="lg:hidden">
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="btn btn-ghost btn-circle"
-          >
-            {isMobileMenuOpen ? (
-              <HiX className="text-2xl" />
-            ) : (
-              <HiMenuAlt3 className="text-2xl" />
-            )}
-          </button>
+        {/* Navbar End - Theme Toggle & Mobile Menu */}
+        <div className="flex items-center gap-2">
+          {/* Theme Toggle Button */}
+          <ThemeToggle />
+          {/* Mobile Menu Button */}
+          <div className="lg:hidden">
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="btn btn-ghost btn-circle"
+            >
+              {isMobileMenuOpen ? (
+                <HiX className="text-2xl" />
+              ) : (
+                <HiMenuAlt3 className="text-2xl" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
 

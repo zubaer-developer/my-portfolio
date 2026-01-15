@@ -1,4 +1,10 @@
-import { FaGithub, FaLinkedin, FaDownload } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaDownload,
+  FaFacebook,
+  FaTwitter,
+} from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 import profilePhoto from "../assets/profile.jpg";
 
@@ -13,7 +19,8 @@ const Hero = () => {
     social: {
       github: "https://github.com/zubaer-developer",
       linkedin: "https://www.linkedin.com/in/md-zubaer-hossain-137134356/",
-      facebook: "https://facebook.com",
+      twitter: "https://twitter.com",
+      facebook: "https://www.facebook.com/zubaer.hossain/",
       email: "zubaer.developer@gmail.com",
     },
   };
@@ -88,6 +95,17 @@ const Hero = () => {
                 title="LinkedIn"
               >
                 <FaLinkedin />
+              </a>
+
+              {/* Twitter */}
+              <a
+                href={personalInfo.social.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-circle btn-ghost text-2xl hover:text-primary hover:bg-primary/10 transition-all"
+                title="Twitter"
+              >
+                <FaTwitter />
               </a>
 
               {/* Facebook */}

@@ -7,9 +7,9 @@ import Navbar from "../components/Navbar";
 import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 
-function Home() {
+const Home = () => {
   return (
-    <div data-theme="light">
+    <div>
       <Navbar></Navbar>
       <Hero></Hero>
       <About></About>
@@ -20,6 +20,6 @@ function Home() {
       <Footer></Footer>
     </div>
   );
-}
+};
 
 export default Home;
